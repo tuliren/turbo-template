@@ -1116,8 +1116,9 @@ __metadata:
     "@types/react": "npm:^18.2.61"
     "@types/react-dom": "npm:^18.2.19"
     eslint: "npm:^8.57.0"
-    react: "npm:^18.2.0"
     typescript: "npm:^5.3.3"
+  peerDependencies:
+    react: "*"
   languageName: unknown
   linkType: soft
 
@@ -3027,26 +3028,6 @@ __metadata:
   checksum: dcac00920a4d503e38bb64001acb19df4efc14536ada475725e12f52c16777afdee4db827f55f13a908ee7efc0cb282e2e3dbaeeb98c0993dd93d1802d3bf00c
   languageName: node
   linkType: hard
-
-"docs@workspace:apps/docs":
-  version: 0.0.0-use.local
-  resolution: "docs@workspace:apps/docs"
-  dependencies:
-    "@next/eslint-plugin-next": "npm:^14.1.1"
-    "@repo/eslint-config": "npm:*"
-    "@repo/lib": "npm:*"
-    "@repo/typescript-config": "npm:*"
-    "@types/eslint": "npm:^8.56.5"
-    "@types/node": "npm:^20.11.24"
-    "@types/react": "npm:^18.2.61"
-    "@types/react-dom": "npm:^18.2.19"
-    eslint: "npm:^8.57.0"
-    next: "npm:^14.1.1"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.3.3"
-  languageName: unknown
-  linkType: soft
 
 "doctrine@npm:^2.1.0":
   version: 2.1.0
