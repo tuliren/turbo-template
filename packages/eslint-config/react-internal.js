@@ -1,6 +1,6 @@
-const { resolve } = require("node:path");
+const { resolve } = require('node:path');
 
-const project = resolve(process.cwd(), "tsconfig.json");
+const project = resolve(process.cwd(), 'tsconfig.json');
 
 /*
  * This is a custom ESLint configuration for use with
@@ -10,8 +10,14 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo"],
-  plugins: ["only-warn"],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    // Extend the typescript configuration as the last
+    // one to override any conflicting rules.
+    './typescript.js',
+  ],
+  plugins: ['only-warn', 'react', 'react-hooks'],
   globals: {
     React: true,
     JSX: true,
@@ -20,20 +26,17 @@ module.exports = {
     browser: true,
   },
   settings: {
-    "import/resolver": {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
       typescript: {
         project,
       },
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    ".*.js",
-    "node_modules/",
-    "dist/",
-  ],
   overrides: [
     // Force ESLint to detect .tsx files
-    { files: ["*.js?(x)", "*.ts?(x)"] },
+    { files: ['*.js?(x)', '*.ts?(x)'] },
   ],
 };
