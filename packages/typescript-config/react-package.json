@@ -3,9 +3,8 @@
   "display": "React Library",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["ES2015"],
-    "target": "ES6",
+    "declaration": false,
+    "declarationMap": false,
     "jsx": "react-jsx"
-  },
-  "exclude": ["node_modules"]
+  }
 }
