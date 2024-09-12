@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+dist
+coverage
+package-lock.json
+storybook-static
+
+# Ignore all HTML files:
+**/*.html
