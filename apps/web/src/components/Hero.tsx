@@ -28,7 +28,7 @@ export default function Hero() {
       className="flex min-h-[80vh] flex-col justify-start pb-16 pt-[20vh] text-center"
     >
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium leading-tight tracking-tight text-slate-700 sm:text-7xl sm:leading-tight">
-        Start <Underline text="dream project" /> with one clone
+        Start <Underline text="dream project" /> with one click
       </h1>
       <p className="mx-auto mt-10 max-w-2xl text-xl tracking-tight text-slate-500">
         This is a Turbo project template including everything you need to build your dream project.
