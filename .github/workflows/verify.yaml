@@ -1,17 +1,17 @@
-name: Build
+name: Verify
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
 
 jobs:
-  verify:
+  Verify:
     runs-on: ubuntu-latest
     env:
       TURBO_TELEMETRY_DISABLED: 1
@@ -32,5 +32,3 @@ jobs:
         run: |
           yarn lint
           yarn format:check
-      - name: Build project
-        run: yarn build
