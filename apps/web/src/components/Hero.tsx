@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Button } from '@/components/Button';
 import Underline from '@/components/Underline';
+import { DESCRIPTION } from '@/constants';
 import airbyteLogo from '@/images/logos/airbyte.svg';
 import benchlingLogo from '@/images/logos/benchling.svg';
 import duckyLogo from '@/images/logos/ducky.svg';
@@ -30,9 +31,7 @@ export default function Hero() {
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium leading-tight tracking-tight text-slate-700 sm:text-7xl sm:leading-tight">
         Start <Underline text="dream project" /> with one click
       </h1>
-      <p className="mx-auto mt-10 max-w-2xl text-xl tracking-tight text-slate-500">
-        This is a Turbo project template including everything you need to build your dream project.
-      </p>
+      <p className="mx-auto mt-10 max-w-2xl text-xl tracking-tight text-slate-500">{DESCRIPTION}</p>
       <div className="mt-14 flex justify-center gap-x-6">
         <Button href="#" color="slate" variant="solid">
           Coming soon
