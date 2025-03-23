@@ -6,3 +6,6 @@ export const DESCRIPTION =
   'This is a Turbo project template including everything you need to build your dream project.';
 export const DOMAIN = 'example.com';
 export const DOMAIN_URL = `https://${DOMAIN}`;
+export const CONTACT_EMAIL = `contact@${DOMAIN}`;
+
+export const FREE_TRIAL_MONTHS = 1;
