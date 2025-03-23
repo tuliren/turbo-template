@@ -11,7 +11,7 @@ import { TITLE } from '@/constants';
 const navigation = [
   { name: 'Features', href: '#features' },
   { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQs', href: '#faq' },
+  { name: 'FAQs', href: '#faqs' },
 ];
 
 export default function Header() {
