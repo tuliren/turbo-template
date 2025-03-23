@@ -48,7 +48,7 @@ const faqs = [
 
 export function Faqs() {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="pt-1 pb-1 sm:pb-20 lg:pb-32">
+    <section id="faqs" aria-labelledby="faq-title" className="pt-1 pb-1 sm:pb-20 lg:pb-32">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
           Frequently asked questions
