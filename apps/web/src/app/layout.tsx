@@ -5,7 +5,9 @@ import PlausibleProvider from 'next-plausible';
 import { Inter, Lexend } from 'next/font/google';
 import { ReactNode } from 'react';
 
-import { DESCRIPTION, DOMAIN, TITLE } from '@/constants';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { DESCRIPTION, DOMAIN, DOMAIN_URL, TITLE } from '@/constants';
 import '@/styles/globals.css';
 import '@/styles/tailwind.css';
 
@@ -15,7 +17,17 @@ export const metadata: Metadata = {
     default: TITLE,
   },
   description: DESCRIPTION,
-  icons: [{ rel: 'icon', url: '/logo.svg' }],
+  icons: [
+    { rel: 'icon', type: 'image/svg', url: '/logo.svg' },
+    { rel: 'icon', type: 'image/png', url: '/logo.png' },
+  ],
+  robots: 'index, follow',
+  openGraph: {
+    title: `Home | ${TITLE}`,
+    description: DESCRIPTION,
+    url: DOMAIN_URL,
+    type: 'website',
+  },
 };
 
 const inter = Inter({
@@ -43,17 +55,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       )}
     >
       <body className="flex h-full flex-col">
-        <PlausibleProvider domain={DOMAIN} enabled={enableAnalytics} />
-        <ClerkProvider
-          appearance={{
-            layout: {
-              privacyPageUrl: '/privacy',
-              termsPageUrl: '/terms',
-            },
-          }}
-        >
-          {children}
-        </ClerkProvider>
+        <main>
+          <Header />
+
+          <PlausibleProvider domain={DOMAIN} enabled={enableAnalytics} />
+          <ClerkProvider
+            appearance={{
+              layout: {
+                privacyPageUrl: '/privacy',
+                termsPageUrl: '/terms',
+              },
+            }}
+          >
+            {children}
+          </ClerkProvider>
+        </main>
+        <Footer />
       </body>
     </html>
   );
