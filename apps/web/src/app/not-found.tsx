@@ -1,14 +1,8 @@
+import { CONTACT_EMAIL } from '@/constants';
+
 export default function Example() {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full">
-        <body class="h-full">
-        ```
-      */}
       <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center">
           <p className="text-2xl font-semibold text-primary">404</p>
@@ -26,7 +20,7 @@ export default function Example() {
               Go Back Home
             </a>
             <a
-              href="mailto:contact@repo"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-gray-900 hover:bg-primary/10"
             >
               Email Support <span aria-hidden="true">&rarr;</span>
