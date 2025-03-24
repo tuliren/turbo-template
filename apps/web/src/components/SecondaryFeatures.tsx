@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
 import { Container } from '@/components/Container';
+import PrimaryFeatures from '@/components/PrimaryFeatures';
 
 const SECONDARY_FEATURES = {
   title: 'Secondary features title',
@@ -166,7 +167,7 @@ function FeaturesDesktop() {
   );
 }
 
-export function SecondaryFeatures() {
+function SecondaryFeatures() {
   return (
     <section
       id="secondary-features"
@@ -188,3 +189,5 @@ export function SecondaryFeatures() {
     </section>
   );
 }
+
+export default SecondaryFeatures;

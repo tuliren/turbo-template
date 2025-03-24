@@ -8,7 +8,7 @@ export const CALL_TO_ACTION = {
   button: `Get ${FREE_TRIAL_MONTHS} month${FREE_TRIAL_MONTHS > 1 ? 's' : ''} free`,
 };
 
-export function CallToAction() {
+function CallToAction() {
   return (
     <section id="get-started-today" className="relative overflow-hidden bg-primary/90 py-32">
       <Container className="relative">
@@ -25,3 +25,5 @@ export function CallToAction() {
     </section>
   );
 }
+
+export default CallToAction;

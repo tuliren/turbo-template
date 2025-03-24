@@ -46,7 +46,7 @@ const faqs = [
   ],
 ];
 
-export function Faqs() {
+function Faqs() {
   return (
     <section id="faqs" aria-labelledby="faq-title" className="pt-1 pb-1 sm:pb-20 lg:pb-32">
       <div className="mx-auto max-w-4xl text-center">
@@ -83,3 +83,5 @@ export function Faqs() {
     </section>
   );
 }
+
+export default Faqs;

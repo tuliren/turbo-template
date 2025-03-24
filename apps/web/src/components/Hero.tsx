@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Button } from '@/components/Button';
 import Underline from '@/components/Underline';
+import WaitingList from '@/components/WaitingList';
 import { DESCRIPTION } from '@/constants';
 import airbyteLogo from '@/images/logos/airbyte.svg';
 import benchlingLogo from '@/images/logos/benchling.svg';
@@ -21,6 +22,8 @@ const CompanyGroups = [
   },
 ];
 
+const SHOW_WAITLIST = false;
+
 export default function Hero() {
   return (
     <section
@@ -32,30 +35,39 @@ export default function Hero() {
         Start <Underline text="dream project" /> with one click
       </h1>
       <p className="mx-auto mt-10 max-w-2xl text-xl tracking-tight text-slate-500">{DESCRIPTION}</p>
+
       <div className="mt-14 flex justify-center gap-x-6">
-        <Button href="#" color="slate" variant="solid">
-          Coming soon
-        </Button>
+        {SHOW_WAITLIST ? (
+          <div className="mb-10">
+            <WaitingList />
+          </div>
+        ) : (
+          <Button href="#" color="slate" variant="solid">
+            Coming soon
+          </Button>
+        )}
       </div>
 
-      <div className="mt-36 sm:mt-28 lg:mb-8 lg:mt-44">
-        <p className="text-xl tracking-tight text-slate-500">Brought to you by folks from</p>
-        <ul
-          role="list"
-          className="mt-8 grid grid-cols-2 gap-x-8 sm:flex sm:items-center sm:justify-center sm:gap-x-5 sm:gap-y-10 xl:flex xl:flex-row xl:gap-x-12 xl:gap-y-0"
-        >
-          {CompanyGroups.map((company) => (
-            <li key={company.name} className="flex items-center justify-center">
-              <Image
-                src={company.logo}
-                height={company.height * 1.2}
-                alt={company.name}
-                unoptimized
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
+      {!SHOW_WAITLIST && (
+        <div className="mt-36 sm:mt-28 lg:mb-8 lg:mt-44">
+          <p className="text-xl tracking-tight text-slate-500">Brought to you by folks from</p>
+          <ul
+            role="list"
+            className="mt-8 grid grid-cols-2 gap-x-8 sm:flex sm:items-center sm:justify-center sm:gap-x-5 sm:gap-y-10 xl:flex xl:flex-row xl:gap-x-12 xl:gap-y-0"
+          >
+            {CompanyGroups.map((company) => (
+              <li key={company.name} className="flex items-center justify-center">
+                <Image
+                  src={company.logo}
+                  height={company.height * 1.2}
+                  alt={company.name}
+                  unoptimized
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </section>
   );
 }

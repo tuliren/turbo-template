@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import { clsx } from 'clsx';
 import { type Metadata } from 'next';
 import PlausibleProvider from 'next-plausible';
@@ -43,7 +44,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body className="flex h-full flex-col">
         <PlausibleProvider domain={DOMAIN} enabled={enableAnalytics} />
-        {children}
+        <ClerkProvider
+          appearance={{
+            layout: {
+              privacyPageUrl: '/privacy',
+              termsPageUrl: '/terms',
+            },
+          }}
+        >
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );

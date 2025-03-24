@@ -66,7 +66,7 @@ export const PRIMARY_FEATURES: FeatureType[] = [
   },
 ];
 
-export function PrimaryFeatures() {
+function PrimaryFeatures() {
   let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>('horizontal');
 
   useEffect(() => {
@@ -169,3 +169,5 @@ export function PrimaryFeatures() {
     </section>
   );
 }
+
+export default PrimaryFeatures;
