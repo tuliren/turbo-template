@@ -7,18 +7,24 @@ import { DESCRIPTION } from '@/constants';
 import airbyteLogo from '@/images/logos/airbyte.svg';
 import benchlingLogo from '@/images/logos/benchling.svg';
 import duckyLogo from '@/images/logos/ducky.svg';
+import liquidLogo from '@/images/logos/liquid.png';
 import liverampLogo from '@/images/logos/liveramp.svg';
 import scaleLogo from '@/images/logos/scale.svg';
 
 const CompanyGroups = [
   { name: 'LiveRamp', logo: liverampLogo, height: 30 },
-  { name: 'Scale', logo: scaleLogo, height: 38 },
+  { name: 'Scale AI', logo: scaleLogo, height: 38 },
   { name: 'Airbyte', logo: airbyteLogo, height: 54 },
   { name: 'Ducky', logo: duckyLogo, height: 40 },
   {
     name: 'Benchling',
     logo: benchlingLogo,
     height: 45,
+  },
+  {
+    name: 'Liquid AI',
+    logo: liquidLogo,
+    height: 30,
   },
 ];
 
@@ -29,7 +35,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Hero"
-      className="flex min-h-[80vh] flex-col justify-start pb-16 pt-[20vh] text-center"
+      className="flex min-h-[80vh] flex-col justify-start px-6 pb-16 pt-[20vh] text-center sm:px-8"
     >
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium leading-tight tracking-tight text-slate-700 sm:text-7xl sm:leading-tight">
         Start <Underline text="dream project" /> with one click
@@ -62,6 +68,7 @@ export default function Hero() {
                   height={company.height * 1.2}
                   alt={company.name}
                   unoptimized
+                  className="sm:transform-none scale-80 sm:scale-100"
                 />
               </li>
             ))}
