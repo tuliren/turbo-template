@@ -8,8 +8,8 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,json}\"",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,json}\" --log-level=warn",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,mdx}\" --log-level=debug",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,mdx}\" --log-level=warn",
     "postinstall": "husky",
     "lint": "turbo lint",
     "prepare": "husky",
@@ -17,7 +17,7 @@
     "typecheck": "turbo typecheck"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": "prettier --write"
+    "*.{js,jsx,ts,tsx,json,mdx}": "prettier --write"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
