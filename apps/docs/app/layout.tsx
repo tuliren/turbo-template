@@ -23,7 +23,12 @@ const navbar = (
   />
 );
 const footer = (
-  <Footer>
+  <Footer
+    style={{
+      padding: '1.5rem',
+      fontSize: '0.875rem',
+    }}
+  >
     Copyright © {new Date().getFullYear()} Starfish Software LLC. All rights reserved.
   </Footer>
 );
@@ -54,7 +59,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             content: null,
           }}
           footer={footer}
-          // ... Your additional layout options
         >
           {children}
         </Layout>
