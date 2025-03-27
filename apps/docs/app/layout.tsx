@@ -2,6 +2,7 @@ import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import 'nextra-theme-docs/style.css';
 import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
+import { ReactNode } from 'react';
 
 export const metadata = {
   // Define your metadata here
@@ -16,7 +17,7 @@ const navbar = (
   <Navbar
     logo={
       <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <img src="/images/general/icon.png" alt="Logo" width={20} height={20} /> Template
+        <img src="/icon.png" alt="Logo" width={20} height={20} /> Template
       </span>
     }
   />
@@ -27,7 +28,7 @@ const footer = (
   </Footer>
 );
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       // Not required, but good for SEO
@@ -40,7 +41,7 @@ export default async function RootLayout({ children }) {
       <Head
       // ... Your additional head options
       >
-        <link rel="shortcut icon" href="/images/general/icon.png" />
+        <link rel="shortcut icon" href="/icon.png" />
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
       <body>

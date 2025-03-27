@@ -1954,9 +1954,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@repo/docs@workspace:apps/docs"
   dependencies:
+    "@next/eslint-plugin-next": "npm:^14.1.1"
+    "@repo/eslint-config": "npm:*"
+    "@repo/typescript-config": "npm:*"
     "@tabler/icons-react": "npm:^3.31.0"
     "@types/node": "npm:22.13.10"
     "@types/react": "npm:19.0.10"
+    eslint: "npm:^8.57.0"
     next: "npm:^15.1.7"
     nextra: "npm:^4.2.13"
     nextra-theme-docs: "npm:^4.2.13"
