@@ -8,11 +8,6 @@ type Params = {
   mdxPath: string[];
 };
 
-type PageProps = {
-  params: Params;
-  [key: string]: any;
-};
-
 type MDXResult = {
   default: ComponentType<any>;
   toc: any[];
@@ -29,8 +24,8 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
 
 const Wrapper = getMDXComponents({}).wrapper;
 
-export default async function Page(props: PageProps): Promise<JSX.Element> {
-  const params = props.params;
+export default async function Page(props: any): Promise<JSX.Element> {
+  const params = await props.params;
   const result = (await importPage(params.mdxPath)) as MDXResult;
   const { default: MDXContent, toc, metadata } = result;
 

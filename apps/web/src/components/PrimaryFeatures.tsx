@@ -1,7 +1,7 @@
 'use client';
 
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
