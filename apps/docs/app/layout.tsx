@@ -48,6 +48,10 @@ export default async function RootLayout({ children }) {
           banner={banner}
           navbar={navbar}
           pageMap={await getPageMap()}
+          editLink={null}
+          feedback={{
+            content: null,
+          }}
           footer={footer}
           // ... Your additional layout options
         >
