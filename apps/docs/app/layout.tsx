@@ -17,7 +17,8 @@ const navbar = (
   <Navbar
     logo={
       <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <img src="/icon.png" alt="Logo" width={20} height={20} /> Template
+        <img src="/icon.png" alt="Logo" width={20} height={20} />
+        <span style={{ fontWeight: 700, color: '#0b5394' }}>Nextra Template</span>
       </span>
     }
   />
