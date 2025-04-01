@@ -1,4 +1,5 @@
 import { ClerkProvider } from '@clerk/nextjs';
+import { MantineProvider } from '@mantine/core';
 import { clsx } from 'clsx';
 import { type Metadata } from 'next';
 import PlausibleProvider from 'next-plausible';
@@ -69,7 +70,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               },
             }}
           >
-            {children}
+            <MantineProvider>{children}</MantineProvider>
           </ClerkProvider>
         </main>
 
