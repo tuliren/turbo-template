@@ -3,7 +3,6 @@
 import CallToAction from '@/components/CallToAction';
 import Faqs from '@/components/Faqs';
 import Hero from '@/components/Hero';
-import { MantineTest } from '@/components/MantineTest';
 import Pricing from '@/components/Pricing';
 import PrimaryFeatures from '@/components/PrimaryFeatures';
 import SecondaryFeatures from '@/components/SecondaryFeatures';
@@ -17,7 +16,6 @@ export default function Home() {
       <CallToAction />
       <Pricing />
       <Faqs />
-      <MantineTest />
     </>
   );
 }
