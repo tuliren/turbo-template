@@ -1,6 +1,6 @@
+import { Button, useMantineTheme } from '@mantine/core';
 import Image from 'next/image';
 
-import { Button } from '@/components/Button';
 import Underline from '@/components/Underline';
 import WaitingList from '@/components/WaitingList';
 import { DESCRIPTION } from '@/constants';
@@ -31,6 +31,8 @@ const CompanyGroups = [
 const SHOW_WAITLIST = false;
 
 export default function Hero() {
+  const theme = useMantineTheme();
+
   return (
     <section
       id="hero"
@@ -48,7 +50,14 @@ export default function Hero() {
             <WaitingList />
           </div>
         ) : (
-          <Button href="#" color="slate" variant="solid">
+          <Button
+            component="a"
+            href="#"
+            variant="filled"
+            size="md"
+            color={theme.colors.gray[8]}
+            radius="xl"
+          >
             Coming soon
           </Button>
         )}
