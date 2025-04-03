@@ -19,10 +19,12 @@ app.add_middleware(
 
 app.include_router(items_router)
 
+
 @app.get("/")
 async def root():
     """Root endpoint returning a welcome message."""
     return {"message": "Welcome to Turbo Template Backend API"}
+
 
 @app.get("/health")
 async def health_check():

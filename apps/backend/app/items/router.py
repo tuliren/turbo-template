@@ -25,5 +25,5 @@ async def get_item(item_id: int):
     """Demo endpoint returning a specific item by ID."""
     if item_id not in items:
         return {"error": "Item not found"}
-    
+
     return items[item_id]

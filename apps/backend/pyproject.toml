@@ -1,9 +1,12 @@
 [tool.poetry]
-name = "backend"
+name = "repo-backend"
 version = "0.1.0"
-description = "A toy FastAPI server with demo endpoints"
-authors = ["Devin AI <158243242+devin-ai-integration[bot]@users.noreply.github.com>"]
+description = "A FastAPI server backend"
+authors = ["Liren Tu"]
 readme = "README.md"
+packages = [
+    { include = "app" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -52,6 +55,6 @@ disable = [
 max-line-length = 88
 
 [tool.pytest.ini_options]
-testpaths = ["app/__tests__"]
+testpaths = ["app/**/__tests__"]
 python_files = "*_test.py"
 python_functions = "test_*"

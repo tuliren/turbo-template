@@ -16,33 +16,24 @@ A toy FastAPI server with demo endpoints for the Turbo Template monorepo.
 ## Development
 
 ```bash
-# Install dependencies
-poetry install
-
-# Run development server
-yarn dev
-# or directly with poetry
-poetry run uvicorn app.main:app --reload
-
-# Run linting
+yarn dev:init
 yarn lint
-# or directly with poetry
-poetry run flake8 app && poetry run pylint app
-
-# Run type checking
 yarn typecheck
-# or directly with poetry
-poetry run mypy app
+yarn format:write
 
-# Run formatting
-yarn format
-# or directly with poetry
-poetry run black app && poetry run isort app
+# Run server
+yarn dev
 
 # Run tests
 yarn test
-# or directly with poetry
-poetry run pytest
+```
+
+## Run scripts
+
+```bash
+# Note that running npm scripts requires the "--" to separate the arguments that
+# are passed into npm vs those passed into the script.
+yarn script app/scripts/<script-name>.py -- <args-for-script>
 ```
 
 ## API Endpoints
