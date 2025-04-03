@@ -15,13 +15,13 @@ items = {
 
 
 @router.get("/")
-async def get_items():
+async def get_items() -> list[Item]:
     """Demo endpoint returning a list of items."""
     return list(items.values())
 
 
 @router.get("/{item_id}")
-async def get_item(item_id: int):
+async def get_item(item_id: int) -> Item | dict[str, str]:
     """Demo endpoint returning a specific item by ID."""
     if item_id not in items:
         return {"error": "Item not found"}

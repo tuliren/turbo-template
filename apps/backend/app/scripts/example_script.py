@@ -3,7 +3,7 @@ import argparse
 from app.main import app
 
 
-def main():
+def main() -> None:
     """
     yarn script app/scripts/example_script.py -- --param <value>
     """
@@ -20,7 +20,7 @@ def main():
     print(f"Script param: {param}")
     print("Available routes:")
     for route in app.routes:
-        print(f"  {route.path} [{', '.join(route.methods)}]")
+        print(f"  {route.path} [{', '.join(route.methods)}]")  # type: ignore[attr-defined]
 
 
 if __name__ == "__main__":

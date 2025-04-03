@@ -21,12 +21,12 @@ app.include_router(items_router)
 
 
 @app.get("/")
-async def root():
+async def root() -> dict[str, str]:
     """Root endpoint returning a welcome message."""
     return {"message": "Welcome to Turbo Template Backend API"}
 
 
 @app.get("/health")
-async def health_check():
+async def health_check() -> dict[str, str]:
     """Health check endpoint."""
     return {"status": "healthy"}
