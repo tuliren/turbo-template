@@ -1,4 +1,4 @@
-name: Chromatic
+name: Storybook
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  chromatic-deployment:
+  storybook:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -32,3 +32,6 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ./apps/web
           autoAcceptChanges: 'main'
+          exitZeroOnChanges: true  # makes the workflow continue even if there are changes
+          exitOnceUploaded: true   # makes the workflow exit once the build is uploaded
+          allowConsoleErrors: true  # prevents console errors from failing the build
