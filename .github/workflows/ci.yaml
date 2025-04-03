@@ -1,4 +1,4 @@
-name: Verify
+name: CI
 
 on:
   push:
@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  Verify:
+  ci:
     runs-on: ubuntu-latest
     env:
       TURBO_TELEMETRY_DISABLED: 1
@@ -26,9 +26,21 @@ jobs:
         with:
           node-version: 20
           cache: yarn
+      - name: Install poetry
+        run: pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: 'poetry'
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          yarn install --frozen-lockfile
+          cd apps/backend && yarn dev:init
       - name: Lint code
         run: |
           yarn lint
           yarn format:check
+      - name: Run tests
+        run: |
+          yarn test
