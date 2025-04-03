@@ -1,5 +1,6 @@
 import { MantineProvider } from '@mantine/core';
 import { Meta, StoryObj } from '@storybook/react';
+
 import Hero from '../../Hero';
 
 const meta = {
