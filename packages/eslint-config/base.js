@@ -6,7 +6,7 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'prettier',
-    'turbo',
+    'plugin:turbo/recommended',
   ],
   ignorePatterns: [
     // Ignore dotfiles
