@@ -42,3 +42,11 @@ yarn script app/scripts/<script-name>.py -- <args-for-script>
 - `GET /health`: Health check endpoint
 - `GET /api/items`: Get a list of demo items
 - `GET /api/items/{item_id}`: Get a specific item by ID
+
+## IntelliJ Setup
+
+- Run `yarn dev:init` or `poetry install` to create a virtual environment and install dependencies.
+- Create a new Python SDK based on this virtual environment.
+- In `Project Structure` -> `Modules`, add a new module for the `apps/backend` directory.
+- Select the virtual environment as the SDK for the module.
+- Then IntelliJ should be able to pick up the dependencies.
