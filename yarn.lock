@@ -1986,6 +1986,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@repo/backend@workspace:apps/backend":
+  version: 0.0.0-use.local
+  resolution: "@repo/backend@workspace:apps/backend"
+  languageName: unknown
+  linkType: soft
+
 "@repo/docs@workspace:apps/docs":
   version: 0.0.0-use.local
   resolution: "@repo/docs@workspace:apps/docs"
