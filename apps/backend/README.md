@@ -46,6 +46,7 @@ yarn script app/scripts/<script-name>.py -- <args-for-script>
 ## IntelliJ Setup
 
 - Run `yarn dev:init` or `poetry install` to create a virtual environment and install dependencies.
+  - Add a virtual environment instead of a Poetry environment. The latter sometimes does not work.
 - Create a new Python SDK based on this virtual environment.
 - In `Project Structure` -> `Modules`, add a new module for the `apps/backend` directory.
 - Select the virtual environment as the SDK for the module.
