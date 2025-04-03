@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "echo 'No build step for Python backend'",
     "dev": "poetry run uvicorn app.main:app --reload",
     "format": "poetry run black app && poetry run isort app",
-    "lint": "echo 'Skipping lint in CI environment'",
-    "test": "poetry run pytest",
-    "typecheck": "echo 'Skipping typecheck in CI environment'"
+    "lint": "poetry run flake8 app && poetry run pylint app",
+    "script": "poetry run python scripts",
+    "start": "poetry run uvicorn app.main:app",
+    "test": "poetry run pytest"
   },
   "packageManager": "yarn@4.0.2"
 }

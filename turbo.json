@@ -35,9 +35,6 @@
       ],
       "inputs": ["$TURBO_DEFAULT$", "!**/*.stories.{ts,tsx,jsx,mdx}"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"]
-    },
-    "format": {
-      "outputs": []
     }
   }
 }
