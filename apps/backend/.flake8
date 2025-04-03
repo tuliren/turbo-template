@@ -2,4 +2,4 @@
 max-line-length = 88
 exclude = .git,__pycache__,.pytest_cache,.venv,build,dist
 # these rules conflict with black config
-extend-ignore = E203, W503
+extend-ignore = E203, E501, W503
