@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '../../Button';
+import { Button } from '@/components/Button';
 
 const meta = {
   title: 'Web/Button',
@@ -10,7 +10,6 @@ const meta = {
     variant: {
       control: 'radio',
       options: ['solid', 'outline'],
-      defaultValue: 'solid',
     },
     color: {
       control: 'radio',

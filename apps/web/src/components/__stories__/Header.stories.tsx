@@ -1,19 +1,11 @@
-import { MantineProvider } from '@mantine/core';
 import { Meta, StoryObj } from '@storybook/react';
 
-import Header from '../../Header';
+import Header from '@/components/Header';
 
 const meta = {
   title: 'Web/Header',
   component: Header,
   tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <MantineProvider>
-        <Story />
-      </MantineProvider>
-    ),
-  ],
 } satisfies Meta<typeof Header>;
 
 export default meta;
