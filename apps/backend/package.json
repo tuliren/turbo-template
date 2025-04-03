@@ -1,0 +1,14 @@
+{
+  "name": "@repo/backend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build step for Python backend'",
+    "dev": "poetry run uvicorn app.main:app --reload",
+    "format": "poetry run black app && poetry run isort app",
+    "lint": "poetry run flake8 app && poetry run pylint app",
+    "test": "poetry run pytest",
+    "typecheck": "poetry run mypy app"
+  },
+  "packageManager": "yarn@4.0.2"
+}
