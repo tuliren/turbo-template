@@ -3437,6 +3437,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@repo/backend@workspace:apps/backend":
+  version: 0.0.0-use.local
+  resolution: "@repo/backend@workspace:apps/backend"
+  languageName: unknown
+  linkType: soft
+
 "@repo/docs@workspace:apps/docs":
   version: 0.0.0-use.local
   resolution: "@repo/docs@workspace:apps/docs"
@@ -3446,14 +3452,14 @@ __metadata:
     "@repo/typescript-config": "npm:*"
     "@tabler/icons-react": "npm:^3.31.0"
     "@types/node": "npm:22.13.10"
-    "@types/react": "npm:19.0.10"
+    "@types/react": "npm:^18.2.61"
     eslint: "npm:^8.57.0"
     next: "npm:^15.1.7"
     nextra: "npm:^4.2.13"
     nextra-theme-docs: "npm:^4.2.13"
     pagefind: "npm:^1.3.0"
-    react: "npm:^19.0.0"
-    react-dom: "npm:^19.0.0"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
     typescript: "npm:^5.7.3"
   languageName: unknown
   linkType: soft
@@ -5160,15 +5166,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:19.0.10":
-  version: 19.0.10
-  resolution: "@types/react@npm:19.0.10"
-  dependencies:
-    csstype: "npm:^3.0.2"
-  checksum: 41884cca21850c8b2d6578b172ca0ca4fff6021251a68532b19f2031ac23dc5a9222470208065f8d9985d367376047df2f49ece8d927f7d04cdc94922b1eb34b
-  languageName: node
-  linkType: hard
-
 "@types/resolve@npm:^1.20.2":
   version: 1.20.6
   resolution: "@types/resolve@npm:1.20.6"
@@ -6524,6 +6521,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"big-integer@npm:^1.6.48":
+  version: 1.6.52
+  resolution: "big-integer@npm:1.6.52"
+  checksum: 9604224b4c2ab3c43c075d92da15863077a9f59e5d4205f4e7e76acd0cd47e8d469ec5e5dba8d9b32aa233951893b29329ca56ac80c20ce094b4a647a66abae0
+  languageName: node
+  linkType: hard
+
 "big.js@npm:^5.2.2":
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
@@ -7399,7 +7403,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.20.0":
+"commander@npm:^2.19.0, commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: 74c781a5248c2402a0a3e966a0a2bba3c054aad144f5c023364be83265e796b20565aa9feff624132ff629aa64e16999fa40a743c10c12f7c61e96a794b99288
@@ -8480,6 +8484,13 @@ __metadata:
   dependencies:
     path-type: "npm:^4.0.0"
   checksum: dcac00920a4d503e38bb64001acb19df4efc14536ada475725e12f52c16777afdee4db827f55f13a908ee7efc0cb282e2e3dbaeeb98c0993dd93d1802d3bf00c
+  languageName: node
+  linkType: hard
+
+"discontinuous-range@npm:1.0.0":
+  version: 1.0.0
+  resolution: "discontinuous-range@npm:1.0.0"
+  checksum: 487b105f83c1cc528e25e65d3c4b73958ec79769b7bd0e264414702a23a7e2b282c72982b4bef4af29fcab53f47816c3f0a5c40d85a99a490f4bc35b83dc00f8
   languageName: node
   linkType: hard
 
@@ -12536,6 +12547,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsox@npm:^1.2.119":
+  version: 1.2.121
+  resolution: "jsox@npm:1.2.121"
+  bin:
+    jsox: lib/cli.js
+  checksum: 880bbe067dc670e3ccd6282e91aa1f4076ce9fbdb44b61ebb4a330ea7ddf9f46bc92cc1696280cbcf050eeaf23c97637acf35258669c12b33acd8a4314d72c49
+  languageName: node
+  linkType: hard
+
 "jsx-ast-utils@npm:^2.4.1 || ^3.0.0, jsx-ast-utils@npm:^3.3.5":
   version: 3.3.5
   resolution: "jsx-ast-utils@npm:3.3.5"
@@ -14190,6 +14210,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"moo@npm:^0.5.0":
+  version: 0.5.2
+  resolution: "moo@npm:0.5.2"
+  checksum: a9d9ad8198a51fe35d297f6e9fdd718298ca0b39a412e868a0ebd92286379ab4533cfc1f1f34516177f5129988ab25fe598f78e77c84e3bfe0d4a877b56525a8
+  languageName: node
+  linkType: hard
+
 "ms@npm:^2.1.1, ms@npm:^2.1.3":
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
@@ -14217,6 +14244,23 @@ __metadata:
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
   checksum: f5f9a7974bfb28a91afafa254b197f0f22c684d4a1731763dda960d2c8e375b36c7d690e0d9dc8fba774c537af14a7e979129bca23d88d052fbeb9466955e447
+  languageName: node
+  linkType: hard
+
+"nearley@npm:^2.20.1":
+  version: 2.20.1
+  resolution: "nearley@npm:2.20.1"
+  dependencies:
+    commander: "npm:^2.19.0"
+    moo: "npm:^0.5.0"
+    railroad-diagrams: "npm:^1.0.0"
+    randexp: "npm:0.4.6"
+  bin:
+    nearley-railroad: bin/nearley-railroad.js
+    nearley-test: bin/nearley-test.js
+    nearley-unparse: bin/nearley-unparse.js
+    nearleyc: bin/nearleyc.js
+  checksum: d25e1fd40b19c53a0ada6a688670f4a39063fd9553ab62885e81a82927d51572ce47193b946afa3d85efa608ba2c68f433c421f69b854bfb7f599eacb5fae37e
   languageName: node
   linkType: hard
 
@@ -14586,6 +14630,15 @@ __metadata:
   version: 2.0.19
   resolution: "node-releases@npm:2.0.19"
   checksum: 52a0dbd25ccf545892670d1551690fe0facb6a471e15f2cfa1b20142a5b255b3aa254af5f59d6ecb69c2bec7390bc643c43aa63b13bf5e64b6075952e716b1aa
+  languageName: node
+  linkType: hard
+
+"node-sql-parser@npm:^4.12.0":
+  version: 4.18.0
+  resolution: "node-sql-parser@npm:4.18.0"
+  dependencies:
+    big-integer: "npm:^1.6.48"
+  checksum: 0dd428f579326c802219acfc2fbbde2bbf775b302f02601861c8ec0df0df433a332e5d022eee882523475f81ce9681692eca982751577d452e1105551f2aa734
   languageName: node
   linkType: hard
 
@@ -15524,6 +15577,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier-plugin-sql@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "prettier-plugin-sql@npm:0.18.1"
+  dependencies:
+    jsox: "npm:^1.2.119"
+    node-sql-parser: "npm:^4.12.0"
+    sql-formatter: "npm:^15.0.2"
+    tslib: "npm:^2.6.2"
+  peerDependencies:
+    prettier: ^3.0.3
+  checksum: 876c36f5de041bf21142d8fa451f962e0693bced41aeda113edddb0d44b54f6c32eaff0e2043004522adbb775bb249f84b72ee380a04c8c5a0097f4ce98685aa
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^3.3.3":
   version: 3.3.3
   resolution: "prettier@npm:3.3.3"
@@ -15737,6 +15804,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"railroad-diagrams@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "railroad-diagrams@npm:1.0.0"
+  checksum: 81bf8f86870a69fb9ed243102db9ad6416d09c4cb83964490d44717690e07dd982f671503236a1f8af28f4cb79d5d7a87613930f10ac08defa845ceb6764e364
+  languageName: node
+  linkType: hard
+
+"randexp@npm:0.4.6":
+  version: 0.4.6
+  resolution: "randexp@npm:0.4.6"
+  dependencies:
+    discontinuous-range: "npm:1.0.0"
+    ret: "npm:~0.1.10"
+  checksum: 14ee14b6d7f5ce69609b51cc914fb7a7c82ad337820a141c5f762c5ad1fe868f5191ea6e82359aee019b625ee1359486628fa833909d12c3b5dd9571908c3345
+  languageName: node
+  linkType: hard
+
 "randombytes@npm:^2.0.0, randombytes@npm:^2.0.1, randombytes@npm:^2.0.5, randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -15844,17 +15928,6 @@ __metadata:
   peerDependencies:
     react: ^18.3.1
   checksum: a752496c1941f958f2e8ac56239172296fcddce1365ce45222d04a1947e0cc5547df3e8447f855a81d6d39f008d7c32eab43db3712077f09e3f67c4874973e85
-  languageName: node
-  linkType: hard
-
-"react-dom@npm:^19.0.0":
-  version: 19.0.0
-  resolution: "react-dom@npm:19.0.0"
-  dependencies:
-    scheduler: "npm:^0.25.0"
-  peerDependencies:
-    react: ^19.0.0
-  checksum: a36ce7ab507b237ae2759c984cdaad4af4096d8199fb65b3815c16825e5cfeb7293da790a3fc2184b52bfba7ba3ff31c058c01947aff6fd1a3701632aabaa6a9
   languageName: node
   linkType: hard
 
@@ -16005,13 +16078,6 @@ __metadata:
   dependencies:
     loose-envify: "npm:^1.1.0"
   checksum: 283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
-  languageName: node
-  linkType: hard
-
-"react@npm:^19.0.0":
-  version: 19.0.0
-  resolution: "react@npm:19.0.0"
-  checksum: 9cad8f103e8e3a16d15cb18a0d8115d8bd9f9e1ce3420310aea381eb42aa0a4f812cf047bb5441349257a05fba8a291515691e3cb51267279b2d2c3253f38471
   languageName: node
   linkType: hard
 
@@ -16724,6 +16790,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ret@npm:~0.1.10":
+  version: 0.1.15
+  resolution: "ret@npm:0.1.15"
+  checksum: 01f77cad0f7ea4f955852c03d66982609893edc1240c0c964b4c9251d0f9fb6705150634060d169939b096d3b77f4c84d6b6098a5b5d340160898c8581f1f63f
+  languageName: node
+  linkType: hard
+
 "retext-latin@npm:^4.0.0":
   version: 4.0.0
   resolution: "retext-latin@npm:4.0.0"
@@ -16958,13 +17031,6 @@ __metadata:
   dependencies:
     loose-envify: "npm:^1.1.0"
   checksum: 26383305e249651d4c58e6705d5f8425f153211aef95f15161c151f7b8de885f24751b377e4a0b3dd42cce09aad3f87a61dab7636859c0d89b7daf1a1e2a5c78
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "scheduler@npm:0.25.0"
-  checksum: a4bb1da406b613ce72c1299db43759526058fdcc413999c3c3e0db8956df7633acf395cb20eb2303b6a65d658d66b6585d344460abaee8080b4aa931f10eaafe
   languageName: node
   linkType: hard
 
@@ -17542,6 +17608,18 @@ __metadata:
   version: 1.0.3
   resolution: "sprintf-js@npm:1.0.3"
   checksum: ecadcfe4c771890140da5023d43e190b7566d9cf8b2d238600f31bec0fc653f328da4450eb04bd59a431771a8e9cc0e118f0aa3974b683a4981b4e07abc2a5bb
+  languageName: node
+  linkType: hard
+
+"sql-formatter@npm:^15.0.2":
+  version: 15.5.2
+  resolution: "sql-formatter@npm:15.5.2"
+  dependencies:
+    argparse: "npm:^2.0.1"
+    nearley: "npm:^2.20.1"
+  bin:
+    sql-formatter: bin/sql-formatter-cli.cjs
+  checksum: 1c7a441e441ebea1458240f56d60fb731c6163b2da62037572d6ec9971b6cee3a9f4f53d29b74a7492ab7f13fcc481f90de45edbfad60249dd3e8ca68d7da17f
   languageName: node
   linkType: hard
 
@@ -18453,6 +18531,7 @@ __metadata:
     lint-staged: "npm:^15.2.10"
     prettier: "npm:^3.3.3"
     prettier-plugin-packagejson: "npm:^2.5.2"
+    prettier-plugin-sql: "npm:^0.18.1"
     turbo: "npm:^2.1.0"
   languageName: unknown
   linkType: soft
