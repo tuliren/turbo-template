@@ -31,7 +31,8 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-dom": "*"
   },
   "packageManager": "yarn@4.0.2"
 }
