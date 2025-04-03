@@ -17,7 +17,7 @@
     "typecheck": "turbo typecheck"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,mdx}": "prettier --write",
+    "*.{ts,tsx,js,jsx,json,mdx}": "prettier --write",
     "*.sql": "prettier --write --plugin=prettier-plugin-sql --language=postgresql",
     "*.py": [
       "isort",
