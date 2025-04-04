@@ -24,7 +24,7 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "fs": "^0.0.1-security",
-    "next": "14.2.25",
+    "next": "14.2.26",
     "next-plausible": "^3.12.4",
     "postcss": "^8.5.3",
     "pretty-ms": "^8.0.0",
