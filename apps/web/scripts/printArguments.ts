@@ -1,14 +1,17 @@
 /**
  * Usage:
- * yarn script scripts/printArguments.ts --name <value> --count <value>
+ * yarn script scripts/printArguments.ts --messages <number> --type <message-type>
  * 
- * A simple script that demonstrates argument parsing.
+ * A script that demonstrates message formatting with:
+ * - 1st line: timestamp, address, status, type
+ * - 2nd line: message text
+ * - Extra newline between messages
  */
 
 interface Args {
   [key: string]: string | boolean | undefined;
-  name?: string;
-  count?: string;
+  messages?: string;
+  type?: string;
 }
 
 function parseArgs(): Args {
@@ -30,23 +33,43 @@ function parseArgs(): Args {
   return result;
 }
 
+function getCurrentTimestamp(): string {
+  const now = new Date();
+  return now.toISOString();
+}
+
+function getRandomAddress(): string {
+  return `0x${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+}
+
+function getRandomStatus(): string {
+  const statuses = ['pending', 'confirmed', 'failed', 'processing'];
+  return statuses[Math.floor(Math.random() * statuses.length)];
+}
+
+function generateSampleMessage(index: number, type: string): void {
+  const timestamp = getCurrentTimestamp();
+  const address = getRandomAddress();
+  const status = getRandomStatus();
+  
+  console.log(`${timestamp} ${address} ${status} ${type}`);
+  
+  console.log(`This is sample message #${index} of type ${type}`);
+  
+  console.log('');
+}
+
 (async () => {
   const args = parseArgs();
+  const messageCount = args.messages ? parseInt(args.messages as string, 10) : 3;
+  const messageType = args.type || 'default';
   
-  if (!args.name) {
-    console.error('Error: --name parameter is required');
-    process.exit(1);
+  console.log('Generating formatted messages:\n');
+  
+  for (let i = 1; i <= messageCount; i++) {
+    generateSampleMessage(i, messageType);
   }
   
-  console.log('Script received the following arguments:');
-  console.log('---------------------------');
-  console.log(`Name: ${args.name}`);
-  
-  if (args.count) {
-    console.log(`Count: ${args.count}`);
-  }
-  
-  console.log('---------------------------');
-  console.log('All command line arguments:');
+  console.log('All arguments:');
   console.log(JSON.stringify(args, null, 2));
 })();
