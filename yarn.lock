@@ -3694,7 +3694,6 @@ __metadata:
   resolution: "@repo/database@workspace:packages/database"
   dependencies:
     "@prisma/client": "npm:^6.6.0"
-    "@repo/eslint-config": "npm:*"
     dotenv-cli: "npm:^8.0.0"
     eslint: "npm:^8.57.0"
     prisma: "npm:^6.6.0"
