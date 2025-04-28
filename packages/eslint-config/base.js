@@ -34,6 +34,7 @@ module.exports = {
           '**/stories/**/*.tsx',
           '**/__stories__/**/*.tsx',
           '**/__stories__/**/*.ts',
+          '**/scripts/**/*.ts',
         ],
         optionalDependencies: false,
         peerDependencies: true,

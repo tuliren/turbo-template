@@ -3552,6 +3552,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.19"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
+    commander: "npm:^13.1.0"
     dayjs: "npm:^1.11.13"
     eslint: "npm:^8.57.0"
     eslint-plugin-jest: "npm:^28.11.0"
@@ -3574,6 +3575,8 @@ __metadata:
     tailwindcss: "npm:^4.0.12"
     tailwindcss-animate: "npm:^1.0.7"
     ts-jest: "npm:^29.3.1"
+    ts-node: "npm:^10.9.2"
+    tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
@@ -7547,6 +7550,13 @@ __metadata:
   version: 10.0.1
   resolution: "commander@npm:10.0.1"
   checksum: 53f33d8927758a911094adadda4b2cbac111a5b377d8706700587650fd8f45b0bbe336de4b5c3fe47fd61f420a3d9bd452b6e0e6e5600a7e74d7bf0174f6efe3
+  languageName: node
+  linkType: hard
+
+"commander@npm:^13.1.0":
+  version: 13.1.0
+  resolution: "commander@npm:13.1.0"
+  checksum: 7b8c5544bba704fbe84b7cab2e043df8586d5c114a4c5b607f83ae5060708940ed0b5bd5838cf8ce27539cde265c1cbd59ce3c8c6b017ed3eec8943e3a415164
   languageName: node
   linkType: hard
 
@@ -18832,7 +18842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.9.1":
+"ts-node@npm:^10.9.1, ts-node@npm:^10.9.2":
   version: 10.9.2
   resolution: "ts-node@npm:10.9.2"
   dependencies:
