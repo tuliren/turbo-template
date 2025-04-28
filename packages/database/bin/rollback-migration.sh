@@ -55,7 +55,7 @@ npx prisma db execute --file "${latest_migration}down.sql" --schema prisma/schem
 echo "Attempting to mark migration '$migration_name' as rolled back..."
 
 # Delete the migration
-prisma db execute --stdin <<SQL
+prisma db execute --schema prisma/schema.prisma --stdin <<SQL
 DELETE FROM "_prisma_migrations"
 WHERE migration_name = '$migration_name';
 SQL
