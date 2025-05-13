@@ -13,5 +13,5 @@
     "test": "poetry run pytest -v .",
     "typecheck": "poetry run mypy ."
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.9.1"
 }
