@@ -1,28 +1,29 @@
+# Nextjs Web App
+
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-yarn dev
+npm i
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-To create [API routes](https://nextjs.org/docs/app/building-your-application/routing/router-handlers) add an `api/` directory to the `app/` directory with a `route.ts` file. For individual endpoints, create a subfolder in the `api` directory, like `api/hello/route.ts` would map to [http://localhost:3000/api/hello](http://localhost:3000/api/hello).
+The `production` branch is automatically deployed to the `production` environment on Vercel.
 
-## Learn More
+The `production` branch can be fast-forwarded to the `main` branch by running the `deploy-main.yaml` GitHub action.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
+```bash
+# Run with the .env.development file
+npm run script scripts/<script-file>.ts -- <args>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Run with the .env.production file, proceed with caution
+npm run script:prod scripts/<script-file>.ts -- <args>
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> [!NOTE]
+> The script environment, `development` or `production` is exported to the `SCRIPT_ENV` variable. If a script is only meant to be run in one environment, it should check the `SCRIPT_ENV` variable and exit if it is not the correct environment.
