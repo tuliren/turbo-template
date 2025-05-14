@@ -12,12 +12,12 @@ on:
       - 'yarn.lock'
     branches:
       - main
-  types:
-    - opened
-    - reopened
-    - synchronize
-    - ready_for_review
-    - review_requested
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - review_requested
   workflow_dispatch:
 
 concurrency:
