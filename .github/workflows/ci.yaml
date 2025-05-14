@@ -97,12 +97,12 @@ jobs:
         run: npx playwright install --with-deps
       - name: Set up main database
         working-directory: packages/database
-        run: npm run db:generate
+        run: yarn db:generate
       - name: Build storybook
         working-directory: apps/web
         env:
           DATABASE_URL: ${{ secrets.PREVIEW_MAIN_DATABASE_URL }}
-        run: npm run build-storybook
+        run: yarn build-storybook
       - name: Serve storybook and run tests
         working-directory: apps/web
         env:
@@ -110,7 +110,7 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "green,blue" \
             "npx http-server storybook-static -p 6006" \
-            "npx wait-on tcp:127.0.0.1:6006 && npm run test:storybook"
+            "npx wait-on tcp:127.0.0.1:6006 && yarn test:storybook"
       - name: Run chromatic
         uses: chromaui/action@latest
         with:

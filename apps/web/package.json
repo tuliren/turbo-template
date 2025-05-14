@@ -12,6 +12,7 @@
     "start": "next start",
     "storybook": "storybook dev",
     "test": "jest --coverage",
+    "test:storybook": "test-storybook",
     "typecheck": "tsc --noEmit --p tsconfig.json"
   },
   "dependencies": {
