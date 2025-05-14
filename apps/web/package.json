@@ -55,6 +55,8 @@
     "@storybook/nextjs": "^8.4.1",
     "@storybook/react": "^8.4.1",
     "@storybook/test": "^8.4.1",
+    "@storybook/test-runner": "^0.22.0",
+    "@swc/core": "^1.11.24",
     "@tailwindcss/typography": "^0.5.16",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.11.24",
