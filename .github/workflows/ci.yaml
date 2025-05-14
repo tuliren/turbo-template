@@ -8,7 +8,7 @@ on:
     paths:
       - 'apps/**'
       - 'packages/database/**'
-      - '.github/workflows/build-monorepo.yaml'
+      - '.github/workflows/ci.yaml'
       - 'package-lock.json'
     branches:
       - main
