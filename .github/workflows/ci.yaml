@@ -9,7 +9,7 @@ on:
       - 'apps/**'
       - 'packages/database/**'
       - '.github/workflows/ci.yaml'
-      - 'package-lock.json'
+      - 'yarn.lock'
     branches:
       - main
   types:
