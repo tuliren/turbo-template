@@ -22,6 +22,12 @@ module.exports = [
     },
   },
   {
+    files: ['**/*.stories.tsx', '**/*.stories.ts'],
+    rules: {
+      'import-x/named': 'off',
+    },
+  },
+  {
     ignores: ['eslint.config.js', '*.config.js', '*.config.cjs', '*.config.mjs', '.storybook/**'],
   },
 ];
