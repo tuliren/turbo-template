@@ -1,42 +1,43 @@
 const { resolve } = require('node:path');
+const react = require('eslint-plugin-react');
+const reactHooks = require('eslint-plugin-react-hooks');
+const onlyWarn = require('eslint-plugin-only-warn');
+const globals = require('globals');
+const typescriptConfig = require('./typescript.js');
 
 const project = resolve(process.cwd(), 'tsconfig.json');
 
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    require.resolve('@vercel/style-guide/eslint/next'),
-    // Extend the typescript configuration as the last
-    // one to override any conflicting rules.
-    './typescript.js',
-  ],
-  plugins: ['only-warn'],
-  globals: {
-    React: true,
-    JSX: true,
-  },
-  env: {
-    node: true,
-  },
-  settings: {
-    react: {
-      version: 'detect',
+/** @type {import('eslint').Linter.Config[]} */
+module.exports = [
+  ...typescriptConfig,
+  {
+    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+      'only-warn': onlyWarn,
     },
-    'import/resolver': {
-      typescript: {
-        project,
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        React: true,
+        JSX: true,
       },
     },
-  },
-  overrides: [
-    { files: ['*.js?(x)', '*.ts?(x)'] },
-    {
-      files: ['*.ts', '*.tsx'],
+    settings: {
+      react: {
+        version: 'detect',
+      },
+      'import-x/resolver': {
+        typescript: {
+          project,
+        },
+      },
     },
-  ],
-  rules: {
-    'react/prop-types': 'off',
+    rules: {
+      ...react.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+      'react/prop-types': 'off',
+    },
   },
-};
+];
