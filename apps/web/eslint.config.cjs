@@ -1,4 +1,3 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 const storybook = require('eslint-plugin-storybook');
 const nextConfig = require('@repo/eslint-config/next.js');
 const globals = require('globals');
