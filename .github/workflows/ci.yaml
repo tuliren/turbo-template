@@ -91,7 +91,7 @@ jobs:
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-
+          key: playwright-${{ runner.os }}-1.57.0
       - name: Install playwright
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
