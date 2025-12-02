@@ -1,6 +1,5 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from 'eslint-plugin-storybook';
-
+const storybook = require('eslint-plugin-storybook');
 const nextConfig = require('@repo/eslint-config/next.js');
 const globals = require('globals');
 
@@ -30,7 +29,15 @@ module.exports = [
       'import-x/named': 'off',
     },
   },
+  ...storybook.configs['flat/recommended'],
   {
-    ignores: ['eslint.config.js', '*.config.js', '*.config.cjs', '*.config.mjs', '.storybook/**'],
+    ignores: [
+      'eslint.config.js',
+      '*.config.js',
+      '*.config.cjs',
+      '*.config.mjs',
+      '.storybook/**',
+      '.next',
+    ],
   },
 ];
