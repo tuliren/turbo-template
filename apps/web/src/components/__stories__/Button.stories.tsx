@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/nextjs';
 
 import { Button } from '@/components/Button';
 
@@ -49,8 +49,8 @@ export const SolidWhite: Story = {
     color: 'white',
     children: 'Solid White Button',
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: { value: 'dark' },
   },
 };
 
@@ -68,8 +68,8 @@ export const OutlineWhite: Story = {
     color: 'white',
     children: 'Outline White Button',
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: { value: 'dark' },
   },
 };
 

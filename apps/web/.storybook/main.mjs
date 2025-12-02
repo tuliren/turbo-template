@@ -1,13 +1,12 @@
-module.exports = {
+export default {
   stories: [
     '../src/**/__stories__/**/*.stories.@(js|jsx|ts|tsx)',
     '../src/**/__stories__/**/*.mdx',
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     '@chromatic-com/storybook',
+    '@storybook/addon-docs'
   ],
 
   framework: {

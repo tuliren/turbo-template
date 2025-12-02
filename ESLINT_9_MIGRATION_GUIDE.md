@@ -4,10 +4,10 @@ This guide provides step-by-step instructions for migrating a monorepo from ESLi
 
 ## Overview
 
-ESLint 9 introduces a new "flat config" format (`eslint.config.js`) that replaces the legacy `.eslintrc.*` format. This migration involves:
+ESLint 9 introduces a new "flat config" format (`eslint.config.cjs`) that replaces the legacy `.eslintrc.*` format. This migration involves:
 
 1. Updating ESLint and plugin versions
-2. Converting all `.eslintrc.js` files to `eslint.config.js` (flat config)
+2. Converting all `.eslintrc.js` files to `eslint.config.cjs` (flat config)
 3. Replacing incompatible plugins
 4. Updating configuration syntax
 5. Testing and fixing issues
@@ -296,7 +296,7 @@ module.exports = {
 
 **After (ESLint 9):**
 ```javascript
-// apps/web/eslint.config.js
+// apps/web/eslint.config.cjs
 const nextConfig = require('@repo/eslint-config/next.js');
 const globals = require('globals');
 
@@ -315,7 +315,7 @@ module.exports = [
     },
   },
   {
-    ignores: ['eslint.config.js', '*.config.js', '.storybook/**'],
+    ignores: ['eslint.config.cjs', '*.config.js', '.storybook/**'],
   },
 ];
 ```
@@ -349,14 +349,14 @@ Keep `next lint` only if you're on Next.js 15+ which supports ESLint 9.
 
 ### Issue 1: Config Files Being Linted
 
-**Problem:** ESLint tries to lint `eslint.config.js` itself and fails.
+**Problem:** ESLint tries to lint `eslint.config.cjs` itself and fails.
 
 **Solution:** Add config files to ignore list:
 
 ```javascript
 {
   ignores: [
-    'eslint.config.js',
+    'eslint.config.cjs',
     '*.config.js',
     '*.config.cjs',
     '*.config.mjs',
@@ -438,7 +438,7 @@ find . -name ".eslintrc.js" -not -path "*/node_modules/*" -delete
 - [ ] Update `@typescript-eslint/*` to `^8.18.2` or later
 - [ ] Replace `eslint-plugin-import` with `eslint-plugin-import-x`
 - [ ] Add `@eslint/js` and `globals` packages
-- [ ] Convert all `.eslintrc.js` to `eslint.config.js` format
+- [ ] Convert all `.eslintrc.js` to `eslint.config.cjs` format
 - [ ] Update all `import/` rules to `import-x/`
 - [ ] Update `import/resolver` settings to `import-x/resolver`
 - [ ] Convert `extends` arrays to config spreads
@@ -464,7 +464,7 @@ Migrate this monorepo from ESLint 8 to ESLint 9 following these steps:
 3. Replace eslint-plugin-import with eslint-plugin-import-x@^4.6.2
 4. Add @eslint/js@^9.0.0 and globals@^15.0.0
 5. Update eslint-plugin-react-hooks to ^5.0.0
-6. Convert all .eslintrc.js files to eslint.config.js using flat config format
+6. Convert all .eslintrc.js files to eslint.config.cjs using flat config format
 7. Update all import/ rules to import-x/
 8. Replace "next lint" with "eslint ." in Next.js apps (if Next.js < 15)
 9. Add config files to ignore patterns
