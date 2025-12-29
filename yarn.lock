@@ -4000,7 +4000,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@repo/database@workspace:^, @repo/database@workspace:packages/database":
+"@repo/database@npm:*, @repo/database@workspace:packages/database":
   version: 0.0.0-use.local
   resolution: "@repo/database@workspace:packages/database"
   dependencies:
@@ -4104,7 +4104,7 @@ __metadata:
     "@mantine/core": "npm:^7.17.3"
     "@mantine/hooks": "npm:^7.17.3"
     "@next/eslint-plugin-next": "npm:^14.1.1"
-    "@repo/database": "workspace:^"
+    "@repo/database": "npm:*"
     "@repo/eslint-config": "npm:*"
     "@repo/jest-presets": "npm:*"
     "@repo/lib": "npm:*"
