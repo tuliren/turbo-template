@@ -6,6 +6,9 @@ package-lock.json
 storybook-static
 node_modules
 
+# Generated files
+packages/database/generated
+
 # Ignore all HTML files:
 **/*.html
 
