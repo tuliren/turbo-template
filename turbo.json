@@ -10,6 +10,9 @@
       "dependsOn": ["^lint"]
     },
     "test": {},
+    "integrationTest": {
+      "dependsOn": ["^db:generate"]
+    },
     "db:generate": {
       "cache": false
     },

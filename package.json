@@ -11,6 +11,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,sql}\" --log-level=warn",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,sql}\" --log-level=warn",
     "postinstall": "husky",
+    "integrationTest": "turbo run integrationTest",
     "lint": "turbo lint",
     "prepare": "husky",
     "test": "turbo test",

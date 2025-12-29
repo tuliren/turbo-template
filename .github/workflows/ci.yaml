@@ -65,6 +65,9 @@ jobs:
       - name: Run tests
         run: |
           yarn test
+      - name: Run integration tests
+        run: |
+          yarn integrationTest
 
   storybook:
     if: ${{ !github.event.pull_request.draft || github.event.pull_request.requested_reviewers[0] || github.event.pull_request.requested_teams[0] }}

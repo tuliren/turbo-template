@@ -15,6 +15,33 @@ The `production` branch is automatically deployed to the `production` environmen
 
 The `production` branch can be fast-forwarded to the `main` branch by running the `deploy-main.yaml` GitHub action.
 
+## Testing
+
+### Unit tests
+
+- All unit tests should live under a `__tests__` subdirectory under the directory being tested.
+- Unit tests are not backed by actual database. The database calls need to be mocked manually.
+- To run tests with actual database, write integration tests instead.
+
+```bash
+# Run unit tests
+npm run test
+```
+
+### Integration tests
+
+- Integration tests are set up to run with Postgres database running in [Testcontainers](https://testcontainers.com/).
+- All integration tests should live under a `__integrationTests__` subdirectory under the directory being tested.
+- Import `@tests/integration-tests` and use `global.testPrisma` to get a Prisma client connected to a test database.
+
+```bash
+# Run integration tests
+npm run integrationTest
+```
+
+> [!NOTE]
+> `global.testPrisma` does not override the Prisma client defined in `packages/database`. To test a function with the testing database, the function should take in a Prisma client as an argument.
+
 ## Scripts
 
 ```bash
