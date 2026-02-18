@@ -8,6 +8,7 @@
     "dev": "next dev",
     "integrationTest": "jest --config jest.integration.config.cjs --coverage",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "script": "scripts/runScriptWithEnv.sh development",
     "script:prod": "scripts/runScriptWithEnv.sh production",
     "start": "next start",
