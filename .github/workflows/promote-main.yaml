@@ -1,4 +1,4 @@
-name: Deploy main to production
+name: Promote main to production
 
 on: workflow_dispatch
 
