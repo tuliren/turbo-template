@@ -1,5 +1,4 @@
 import { ClerkProvider } from '@clerk/nextjs';
-import { MantineProvider } from '@mantine/core';
 import { clsx } from 'clsx';
 import { type Metadata } from 'next';
 import PlausibleProvider from 'next-plausible';
@@ -70,28 +69,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               },
             }}
           >
-            <MantineProvider
-              theme={{
-                colors: {
-                  // generate from https://mantine.dev/colors-generator/?color=0b5394
-                  blue: [
-                    '#ecf5fe',
-                    '#d8e8f6',
-                    '#abcff0',
-                    '#7cb4eb',
-                    '#589ee7',
-                    '#4390e5',
-                    '#3889e5',
-                    '#2c76cc',
-                    '#2269b7',
-                    '#0c5ba1',
-                  ],
-                },
-                primaryColor: 'blue',
-              }}
-            >
-              {children}
-            </MantineProvider>
+            {children}
           </ClerkProvider>
         </main>
 

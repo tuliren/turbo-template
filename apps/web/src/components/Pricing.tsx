@@ -37,7 +37,7 @@ export const PRICING_TIERS = [
   },
   {
     name: 'Advanced',
-    id: 'tier-base',
+    id: 'tier-advanced',
     active: true,
     href: '#',
     price: { monthly: 20, annually: 200 },
