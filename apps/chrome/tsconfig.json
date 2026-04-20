@@ -1,0 +1,24 @@
+{
+  "extends": "@repo/typescript-config/react-package.json",
+  "compilerOptions": {
+    "lib": ["esnext", "es2017.object", "dom", "webworker"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "target": "es6",
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "outDir": "dist/js",
+    "noEmitOnError": true,
+    "typeRoots": ["../../node_modules/@types"]
+  },
+  "include": ["src", "typings.d.ts", "vite.config.ts", "webpack/**.js"],
+  "exclude": ["node_modules"]
+}
