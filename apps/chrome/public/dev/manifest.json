@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Extension Template (dev)",
+  "description": "Chrome extension template with side panel, options, and content-script messaging",
+  "homepage_url": "https://github.com/tuliren/turbo-template",
+  "version": "0.0.1",
+  "version_name": "0.0.1-dev",
+  "action": {
+    "default_icon": "favicon.png",
+    "default_title": "Open Chrome Extension Template"
+  },
+  "icons": {
+    "16": "favicon.png",
+    "48": "favicon.png",
+    "128": "favicon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/vendor.js", "js/content_script.js"]
+    }
+  ],
+  "side_panel": {
+    "default_path": "side_panel.html"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "commands": {
+    "open_side_panel": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+O",
+        "mac": "MacCtrl+Shift+O"
+      },
+      "description": "Open the side panel",
+      "global": false
+    }
+  },
+  "permissions": ["sidePanel", "storage", "tabs"]
+}
