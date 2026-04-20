@@ -1,15 +1,14 @@
-import { Center, Container, Loader } from '@mantine/core';
 import { FC } from 'react';
 
-interface LoadingPanelProps {}
-
-const LoadingPanel: FC<LoadingPanelProps> = ({}) => {
+const LoadingPanel: FC = () => {
   return (
-    <Container>
-      <Center>
-        <Loader />
-      </Center>
-    </Container>
+    <div className="flex items-center justify-center p-6">
+      <div
+        className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-blue-600"
+        role="status"
+        aria-label="Loading"
+      />
+    </div>
   );
 };
 

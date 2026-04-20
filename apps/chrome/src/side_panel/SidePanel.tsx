@@ -1,17 +1,3 @@
-import {
-  Anchor,
-  Button,
-  Code,
-  Container,
-  Group,
-  Stack,
-  Tabs,
-  Text,
-  TextInput,
-  Textarea,
-  Title,
-} from '@mantine/core';
-import '@mantine/core/styles.css';
 import { FC, useState } from 'react';
 
 import LoadingPanel from '../common/LoadingPanel';
@@ -19,6 +5,17 @@ import { GlobalConfig } from '../common/globalConfig';
 import { useTabs } from '../contexts/TabsContext';
 import { UserProfileProvider, useUserProfile } from '../contexts/UserProfileContext';
 import { useHtmlParser } from '../hooks/useHtmlParser';
+
+type TabKey = 'main' | 'profile' | 'about';
+
+const baseButton =
+  'inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60';
+
+const primaryButton = `${baseButton} bg-blue-600 text-white hover:bg-blue-700`;
+const lightRedButton = `${baseButton} bg-red-50 text-red-700 hover:bg-red-100`;
+
+const inputClass =
+  'block w-full rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:cursor-not-allowed disabled:bg-gray-50';
 
 const MainTab: FC = () => {
   const { currentTab } = useTabs();
@@ -40,28 +37,28 @@ const MainTab: FC = () => {
   };
 
   return (
-    <Stack gap="sm" mt="sm">
-      <Text size="sm" c="dimmed">
+    <div className="mt-3 flex flex-col gap-3">
+      <p className="text-sm text-gray-500">
         Round-trip the active page through the content script and render the Turndown-converted
         markdown below.
-      </Text>
-      <Button onClick={handleExtract} loading={parsing} disabled={!currentTab?.id}>
-        Extract page markdown
-      </Button>
-      {error && (
-        <Text size="sm" c="red">
-          {error}
-        </Text>
-      )}
-      <Textarea
+      </p>
+      <button
+        type="button"
+        onClick={handleExtract}
+        disabled={parsing || !currentTab?.id}
+        className={primaryButton}
+      >
+        {parsing ? 'Extracting…' : 'Extract page markdown'}
+      </button>
+      {error && <p className="text-sm text-red-600">{error}</p>}
+      <textarea
         value={content}
         readOnly
-        autosize
-        minRows={8}
-        maxRows={20}
+        rows={12}
         placeholder="Markdown will appear here."
+        className={`${inputClass} resize-y font-mono text-xs`}
       />
-    </Stack>
+    </div>
   );
 };
 
@@ -93,74 +90,109 @@ const ProfileTab: FC = () => {
   };
 
   return (
-    <Stack gap="sm" mt="sm">
-      <Text size="sm" c="dimmed">
-        Stored locally in <Code>chrome.storage.local</Code>. No network calls.
-      </Text>
-      <TextInput
-        label="Display name"
-        value={displayName}
-        onChange={(e) => setDisplayName(e.currentTarget.value)}
-        placeholder="Ada Lovelace"
-      />
-      <TextInput
-        label="Email"
-        value={email}
-        onChange={(e) => setEmail(e.currentTarget.value)}
-        placeholder="ada@example.com"
-      />
-      <Group gap="sm">
-        <Button onClick={handleSave} loading={saving} disabled={!dirty}>
-          Save
-        </Button>
-        <Button variant="light" color="red" onClick={handleClear}>
+    <div className="mt-3 flex flex-col gap-3">
+      <p className="text-sm text-gray-500">
+        Stored locally in{' '}
+        <code className="rounded bg-gray-100 px-1 py-0.5 font-mono text-xs text-gray-800">
+          chrome.storage.local
+        </code>
+        . No network calls.
+      </p>
+      <label className="flex flex-col gap-1">
+        <span className="text-sm font-medium text-gray-700">Display name</span>
+        <input
+          type="text"
+          value={displayName}
+          onChange={(e) => setDisplayName(e.currentTarget.value)}
+          placeholder="Ada Lovelace"
+          className={inputClass}
+        />
+      </label>
+      <label className="flex flex-col gap-1">
+        <span className="text-sm font-medium text-gray-700">Email</span>
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.currentTarget.value)}
+          placeholder="ada@example.com"
+          className={inputClass}
+        />
+      </label>
+      <div className="flex gap-2">
+        <button
+          type="button"
+          onClick={handleSave}
+          disabled={saving || !dirty}
+          className={primaryButton}
+        >
+          {saving ? 'Saving…' : 'Save'}
+        </button>
+        <button type="button" onClick={handleClear} className={lightRedButton}>
           Clear
-        </Button>
-      </Group>
-    </Stack>
+        </button>
+      </div>
+    </div>
   );
 };
 
 const AboutTab: FC = () => {
   return (
-    <Stack gap="sm" mt="sm">
-      <Text>
+    <div className="mt-3 flex flex-col gap-2">
+      <p className="text-sm">
         <strong>Chrome Extension Template</strong>
-      </Text>
-      <Text size="sm" c="dimmed">
+      </p>
+      <p className="text-sm text-gray-500">
         Version {GlobalConfig.version} ({GlobalConfig.environment})
-      </Text>
-      <Anchor component="button" type="button" onClick={() => chrome.runtime.openOptionsPage()}>
+      </p>
+      <button
+        type="button"
+        onClick={() => chrome.runtime.openOptionsPage()}
+        className="self-start text-sm text-blue-600 underline-offset-2 hover:underline"
+      >
         Open options
-      </Anchor>
-    </Stack>
+      </button>
+    </div>
   );
 };
 
 const SidePanel: FC = () => {
+  const [tab, setTab] = useState<TabKey>('main');
+
+  const tabs: { key: TabKey; label: string }[] = [
+    { key: 'main', label: 'Main' },
+    { key: 'profile', label: 'Profile' },
+    { key: 'about', label: 'About' },
+  ];
+
   return (
     <UserProfileProvider>
-      <Container fluid p="sm">
-        <Title order={4} mb="sm">
-          Chrome Extension Template
-        </Title>
-        <Tabs defaultValue="main">
-          <Tabs.List>
-            <Tabs.Tab value="main">Main</Tabs.Tab>
-            <Tabs.Tab value="profile">Profile</Tabs.Tab>
-            <Tabs.Tab value="about">About</Tabs.Tab>
-          </Tabs.List>
-          <Tabs.Panel value="main">
-            <MainTab />
-          </Tabs.Panel>
-          <Tabs.Panel value="profile">
-            <ProfileTab />
-          </Tabs.Panel>
-          <Tabs.Panel value="about">
-            <AboutTab />
-          </Tabs.Panel>
-        </Tabs>
-      </Container>
+      <div className="p-3">
+        <h1 className="mb-3 text-base font-semibold text-gray-900">Chrome Extension Template</h1>
+        <div className="flex border-b border-gray-200" role="tablist">
+          {tabs.map(({ key, label }) => {
+            const active = tab === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                onClick={() => setTab(key)}
+                className={`-mb-px border-b-2 px-3 py-2 text-sm font-medium transition-colors ${
+                  active
+                    ? 'border-blue-600 text-blue-600'
+                    : 'border-transparent text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+        {tab === 'main' && <MainTab />}
+        {tab === 'profile' && <ProfileTab />}
+        {tab === 'about' && <AboutTab />}
+      </div>
     </UserProfileProvider>
   );
 };
