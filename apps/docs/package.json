@@ -2,7 +2,7 @@
   "name": "@repo/docs",
   "version": "0.0.1",
   "scripts": {
-    "build": "next build",
+    "build": "next build --webpack",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "dev": "next dev --turbopack -p 3001",
     "lint": "eslint .",
