@@ -1,6 +1,8 @@
 const { resolve } = require('node:path');
 const tseslint = require('@typescript-eslint/eslint-plugin');
 const tsparser = require('@typescript-eslint/parser');
+const { createTypeScriptImportResolver } = require('eslint-import-resolver-typescript');
+const { createNodeResolver } = require('eslint-plugin-import-x');
 const baseConfig = require('./base.js');
 
 const project = resolve(process.cwd(), 'tsconfig.json');
@@ -23,15 +25,15 @@ module.exports = [
       'import-x/parsers': {
         '@typescript-eslint/parser': ['.ts', '.tsx'],
       },
-      'import-x/resolver': {
-        node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        },
-        typescript: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
           alwaysTryTypes: true,
           project,
-        },
-      },
+        }),
+        createNodeResolver({
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        }),
+      ],
     },
   },
 ];

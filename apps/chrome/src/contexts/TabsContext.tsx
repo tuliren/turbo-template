@@ -77,7 +77,7 @@ export const TabsProvider: FC<TabsProviderProps> = ({ children }) => {
 
     const tabUpdateListener = (
       tabId: number,
-      changeInfo: chrome.tabs.TabChangeInfo,
+      changeInfo: chrome.tabs.OnUpdatedInfo,
       tab: chrome.tabs.Tab
     ) => {
       if (tab.active && changeInfo.status === 'complete') {

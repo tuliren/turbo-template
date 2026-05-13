@@ -1,11 +1,8 @@
-const { resolve } = require('node:path');
 const react = require('eslint-plugin-react');
 const reactHooks = require('eslint-plugin-react-hooks');
 const onlyWarn = require('eslint-plugin-only-warn');
 const globals = require('globals');
 const typescriptConfig = require('./typescript.js');
-
-const project = resolve(process.cwd(), 'tsconfig.json');
 
 /*
  * This is a custom ESLint configuration for use with
@@ -33,11 +30,6 @@ module.exports = [
     settings: {
       react: {
         version: 'detect',
-      },
-      'import-x/resolver': {
-        typescript: {
-          project,
-        },
       },
     },
     rules: {

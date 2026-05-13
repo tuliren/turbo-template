@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { fn } from '@storybook/test';
+import { fn } from 'storybook/test';
 
 const createMockEvent = () => ({
   addListener: fn(),

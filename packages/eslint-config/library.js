@@ -1,6 +1,8 @@
 const { resolve } = require('node:path');
 const js = require('@eslint/js');
 const prettierConfig = require('eslint-config-prettier');
+const { createTypeScriptImportResolver } = require('eslint-import-resolver-typescript');
+const { createNodeResolver } = require('eslint-plugin-import-x');
 const onlyWarn = require('eslint-plugin-only-warn');
 const globals = require('globals');
 
@@ -23,11 +25,12 @@ module.exports = [
       },
     },
     settings: {
-      'import-x/resolver': {
-        typescript: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
           project,
-        },
-      },
+        }),
+        createNodeResolver(),
+      ],
     },
   },
   {
