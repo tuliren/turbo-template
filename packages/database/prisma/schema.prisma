@@ -10,14 +10,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model ClerkUser {
-  id         BigInt   @id @default(autoincrement())
-  user_id    String   @unique
+model User {
+  id         String   @id @default(cuid())
   name       String
   email      String   @unique
   image      String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-
-  @@index([user_id], name: "clerk_user_index_on_user_id")
 }

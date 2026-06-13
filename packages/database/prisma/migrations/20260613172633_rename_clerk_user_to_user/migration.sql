@@ -1,5 +1,5 @@
--- CreateSchema
-CREATE SCHEMA IF NOT EXISTS "public";
+-- DropTable
+DROP TABLE "ClerkUser";
 
 -- CreateTable
 CREATE TABLE "User" (
