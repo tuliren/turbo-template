@@ -8,6 +8,10 @@ const typescriptConfig = require('./typescript.js');
 module.exports = [
   ...typescriptConfig,
   {
+    // Next.js generated artifacts — not authored, should not be linted.
+    ignores: ['.next/**', 'next-env.d.ts'],
+  },
+  {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     plugins: {
       react,
