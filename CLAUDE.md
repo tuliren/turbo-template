@@ -46,7 +46,7 @@ Scope a turbo task to one workspace with `--filter`, e.g. `yarn turbo test --fil
 - Unit tests: under `__tests__/` adjacent to the code under test. DB calls must be mocked — unit tests don't touch a real Postgres.
 - Integration tests (`apps/web`): under `__integrationTests__/`, run via `jest --config jest.integration.config.cjs`. Setup in `apps/web/jest.integration.setup.ts` boots a `PostgreSqlContainer`, runs `prisma migrate deploy`, and exposes `global.testPrisma`. Import `@tests/integration-tests` for the type declaration.
 - `global.testPrisma` does **not** override the Prisma client exported from `@repo/database`. A function under test must accept a Prisma client as an argument if you want the integration test to use the test database. See `ADD_INTEGRATION_TEST_GUIDE.md` for the full pattern when wiring a new app.
-- CI (`.github/workflows/ci.yaml`) runs lint, format:check, test, integrationTest, then a separate storybook job. `ubuntu-latest` has Docker pre-installed, so Testcontainers works out of the box.
+- CI (`.github/workflows/ci.yaml`) runs lint, format:check, test, integrationTest. The Storybook build/test/Chromatic flow lives in its own workflow (`.github/workflows/storybook.yaml`). `ubuntu-latest` has Docker pre-installed, so Testcontainers works out of the box.
 
 ## Database workflow (`packages/database`)
 
