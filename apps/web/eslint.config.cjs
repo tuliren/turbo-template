@@ -36,7 +36,6 @@ module.exports = [
       '*.config.cjs',
       '*.config.mjs',
       '.storybook/**',
-      '.next',
     ],
   },
 ];

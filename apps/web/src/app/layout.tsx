@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <PlausibleProvider domain={DOMAIN} enabled={enableAnalytics} />
           <ClerkProvider
             appearance={{
-              layout: {
+              options: {
                 privacyPageUrl: '/privacy',
                 termsPageUrl: '/terms',
               },

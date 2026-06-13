@@ -7,7 +7,7 @@ const WaitingList: FC<WaitingListProps> = ({}) => {
   return (
     <Waitlist
       appearance={{
-        layout: {
+        options: {
           termsPageUrl: undefined,
           privacyPageUrl: undefined,
           logoPlacement: 'none',
