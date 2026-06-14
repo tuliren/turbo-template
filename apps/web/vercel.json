@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "turbo run build --filter=@repo/web && turbo run db:migrate --filter=@repo/database"
+}
