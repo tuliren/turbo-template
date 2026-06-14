@@ -6,7 +6,7 @@
   },
   "scripts": {
     "db:create-migration": "bin/create-migration.sh",
-    "db:deploy": "prisma migrate status; prisma migrate deploy && npm run db:dump-schema",
+    "db:deploy": "prisma migrate status; npm run db:migrate && npm run db:dump-schema",
     "db:dump-schema": "bin/dump-schema.sh",
     "db:generate": "prisma generate --no-hints",
     "db:migrate": "prisma migrate deploy",
