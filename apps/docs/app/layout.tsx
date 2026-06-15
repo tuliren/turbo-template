@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import 'nextra-theme-docs/style.css';
 import { Banner, Head } from 'nextra/components';
@@ -63,6 +64,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         >
           {children}
         </Layout>
+        <Analytics />
       </body>
     </html>
   );

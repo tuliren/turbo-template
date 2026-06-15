@@ -1,13 +1,13 @@
 import { ClerkProvider } from '@clerk/nextjs';
+import { Analytics } from '@vercel/analytics/next';
 import { clsx } from 'clsx';
 import { type Metadata } from 'next';
-import PlausibleProvider from 'next-plausible';
 import { Inter, Lexend } from 'next/font/google';
 import { ReactNode } from 'react';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import { DESCRIPTION, DOMAIN, DOMAIN_URL, MAIN_COLOR, TITLE } from '@/constants';
+import { DESCRIPTION, DOMAIN_URL, MAIN_COLOR, TITLE } from '@/constants';
 import '@/styles/globals.css';
 import '@/styles/tailwind.css';
 
@@ -45,8 +45,6 @@ const lexend = Lexend({
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const enableAnalytics = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
-
   return (
     <html
       lang="en"
@@ -60,7 +58,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main>
           <Header />
 
-          <PlausibleProvider domain={DOMAIN} enabled={enableAnalytics} />
           <ClerkProvider
             appearance={{
               options: {
@@ -74,6 +71,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
 
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

@@ -3956,6 +3956,7 @@ __metadata:
     "@tabler/icons-react": "npm:^3.44.0"
     "@types/node": "npm:^22.19.19"
     "@types/react": "npm:^19.2.14"
+    "@vercel/analytics": "npm:^2.0.1"
     eslint: "npm:^9.38.0"
     minimatch: "npm:^10.2.5"
     next: "npm:^16.2.6"
@@ -4055,6 +4056,7 @@ __metadata:
     "@types/node": "npm:^22.19.19"
     "@types/react": "npm:^19.2.14"
     "@types/react-dom": "npm:^19.2.3"
+    "@vercel/analytics": "npm:^2.0.1"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
     commander: "npm:^14.0.3"
@@ -4066,7 +4068,6 @@ __metadata:
     jest-environment-jsdom: "npm:^30.4.1"
     minimatch: "npm:^10.2.5"
     next: "npm:^16.2.6"
-    next-plausible: "npm:^3.12.4"
     postcss: "npm:^8.5.14"
     pretty-ms: "npm:^9.3.0"
     react: "npm:^19.2.6"
@@ -6244,6 +6245,39 @@ __metadata:
     d3-transition:
       optional: true
   checksum: 10c0/b12014d94708ab4df7f5a4b6205c6f23ff235cca2ffe91df3314862b109b826e52f9020c2a2f7527d3712d21c578d6db9cdb60ce46a528739cc18e58d111f724
+  languageName: node
+  linkType: hard
+
+"@vercel/analytics@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@vercel/analytics@npm:2.0.1"
+  peerDependencies:
+    "@remix-run/react": ^2
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    nuxt: ">= 3"
+    react: ^18 || ^19 || ^19.0.0-rc
+    svelte: ">= 4"
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@remix-run/react":
+      optional: true
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    nuxt:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 10c0/c788c03d0f072f6f2be52d3f6f4f0680d2343f0d8765a759a044204223b14a6e14b285d0c5d5d05c0b66d4419746c5b245656ebdc48398328d85d96f1ede982b
   languageName: node
   linkType: hard
 
@@ -14970,17 +15004,6 @@ __metadata:
   version: 2.6.2
   resolution: "neo-async@npm:2.6.2"
   checksum: 10c0/c2f5a604a54a8ec5438a342e1f356dff4bc33ccccdb6dc668d94fe8e5eccfc9d2c2eea6064b0967a767ba63b33763f51ccf2cd2441b461a7322656c1f06b3f5d
-  languageName: node
-  linkType: hard
-
-"next-plausible@npm:^3.12.4":
-  version: 3.12.5
-  resolution: "next-plausible@npm:3.12.5"
-  peerDependencies:
-    next: "^11.1.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 "
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/2754b0dab707faf19fe068e3c50c0cfb0b928c74a34bfe72bce79075242d4cfc63ed46d5c2de89b700d67d0e59d57b95af854cc16b470fbd04c3e34323017836
   languageName: node
   linkType: hard
 
