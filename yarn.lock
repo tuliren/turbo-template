@@ -3956,6 +3956,7 @@ __metadata:
     "@tabler/icons-react": "npm:^3.44.0"
     "@types/node": "npm:^22.19.19"
     "@types/react": "npm:^19.2.14"
+    "@vercel/analytics": "npm:^2.0.1"
     eslint: "npm:^9.38.0"
     minimatch: "npm:^10.2.5"
     next: "npm:^16.2.6"

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.44.0",
+    "@vercel/analytics": "^2.0.1",
     "minimatch": "^10.2.5",
     "next": "^16.2.6",
     "nextra": "4.2.13",
