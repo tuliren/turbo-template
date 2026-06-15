@@ -58,7 +58,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main>
           <Header />
 
-          <Analytics />
           <ClerkProvider
             appearance={{
               options: {
@@ -72,6 +71,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
 
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
