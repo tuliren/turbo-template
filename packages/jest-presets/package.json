@@ -8,7 +8,7 @@
   ],
   "dependencies": {
     "jest": "^30.4.2",
-    "ts-jest": "^29.4.9",
+    "ts-jest": "^29.4.12",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@4.9.1"

@@ -10,22 +10,22 @@
     "typecheck": "tsc --noEmit --p tsconfig.json"
   },
   "dependencies": {
-    "@tabler/icons-react": "^3.44.0",
+    "@tabler/icons-react": "^3.46.0",
     "@vercel/analytics": "^2.0.1",
-    "minimatch": "^10.2.5",
-    "next": "^16.2.6",
-    "nextra": "4.2.13",
-    "nextra-theme-docs": "4.2.13",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "minimatch": "^10.2.6",
+    "next": "^16.3.2",
+    "nextra": "4.6.1",
+    "nextra-theme-docs": "4.6.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^16.2.6",
+    "@next/eslint-plugin-next": "^16.3.2",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
-    "@types/node": "^22.19.19",
-    "@types/react": "^19.2.14",
-    "eslint": "^9.38.0",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "eslint": "^9.39.5",
     "pagefind": "^1.5.2",
     "typescript": "^5.9.3"
   }
