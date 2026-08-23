@@ -26,8 +26,7 @@
     ]
   },
   "resolutions": {
-    "nextra-theme-docs/zod": "4.3.6",
-    "nextra/zod": "4.3.6"
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
