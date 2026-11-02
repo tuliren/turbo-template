@@ -1,11 +1,12 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "types": ["jest", "node"],
+    "rootDir": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@tests/*": ["./tests/*"],
-      "@repo/lib/*": ["packages/lib/src/*"]
+      "@repo/lib/*": ["../../packages/lib/src/*"]
     }
   },
   "include": [

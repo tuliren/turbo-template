@@ -9,7 +9,7 @@
   "dependencies": {
     "jest": "^30.5.2",
     "ts-jest": "^29.4.15",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "packageManager": "yarn@4.9.1"
 }

@@ -12,7 +12,7 @@
   "dependencies": {
     "@tabler/icons-react": "^3.50.0",
     "@vercel/analytics": "^2.0.1",
-    "minimatch": "^10.2.6",
+    "minimatch": "^11.0.4",
     "next": "^16.4.4",
     "nextra": "4.6.1",
     "nextra-theme-docs": "4.6.1",
@@ -27,6 +27,6 @@
     "@types/react": "^19.3.0",
     "eslint": "^9.39.5",
     "pagefind": "^1.6.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }

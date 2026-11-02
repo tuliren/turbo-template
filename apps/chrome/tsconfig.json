@@ -10,14 +10,15 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "target": "es6",
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": false,
     "outDir": "dist/js",
+    "rootDir": ".",
     "noEmitOnError": true,
-    "typeRoots": ["../../node_modules/@types"]
+    "typeRoots": ["../../node_modules/@types"],
+    "types": ["chrome", "jest", "node"]
   },
   "include": ["src", "typings.d.ts", "vite.config.ts", "webpack/**.js"],
   "exclude": ["node_modules"]

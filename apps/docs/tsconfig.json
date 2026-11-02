@@ -3,7 +3,6 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "module": "esnext",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }
