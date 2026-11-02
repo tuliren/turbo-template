@@ -35,11 +35,11 @@
     "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
-    "lint-staged": "^17.3.0",
-    "prettier": "^3.9.6",
-    "prettier-plugin-packagejson": "^3.0.2",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-packagejson": "^3.1.0",
     "prettier-plugin-sql": "^0.20.0",
-    "turbo": "^2.10.11"
+    "turbo": "^2.11.10"
   },
   "packageManager": "yarn@4.9.1",
   "engines": {
