@@ -12,7 +12,7 @@ Turborepo monorepo managed with Yarn 4 (Berry) workspaces. Node 20+.
 - `apps/backend` — FastAPI (Python, Poetry). Yarn scripts wrap Poetry so top-level `turbo` tasks reach it.
 - `packages/database` — Prisma schema, generated client, migration scripts. Exports `@repo/database`.
 - `packages/lib` — Shared React components (`@repo/lib`).
-- `packages/eslint-config` — Flat-config ESLint presets (`base.js`, `next.js`, `react-internal.js`, `library.js`). ESLint 9.
+- `packages/eslint-config` — Flat-config ESLint presets (`base.js`, `next.js`, `react-internal.js`, `library.js`). ESLint 10.
 - `packages/jest-presets` — Jest presets consumed by app/lib jest configs.
 - `packages/typescript-config` — Shared tsconfig bases.
 
@@ -37,7 +37,7 @@ Scope a turbo task to one workspace with `--filter`, e.g. `yarn turbo test --fil
 ## Architecture notes that aren't obvious from a quick read
 
 - **Turbo task graph** (`turbo.json`): `build` and `dev` both `dependsOn: ["^db:generate"]`, so Prisma client is generated in `packages/database` before dependents build. `integrationTest` also depends on `^db:generate`. Don't bypass this by calling `next build` directly when Prisma types are stale — run the turbo task.
-- **ESLint 9 flat config**: the repo has already migrated (see `ESLINT_9_MIGRATION_GUIDE.md`). Configs live in `eslint.config.{js,cjs}` per workspace. `eslint-plugin-import` is replaced by `eslint-plugin-import-x` — don't reintroduce the old plugin.
+- **ESLint 10 flat config**: the repo uses flat config (see `ESLINT_9_MIGRATION_GUIDE.md` for the original migration). `eslint-plugin-react` still calls APIs removed in ESLint 10 when `settings.react.version` is `"detect"`, so the version is pinned in `packages/eslint-config` — bump it when upgrading React. Configs live in `eslint.config.{js,cjs}` per workspace. `eslint-plugin-import` is replaced by `eslint-plugin-import-x` — don't reintroduce the old plugin.
 - **Auth on web**: `apps/web/src/proxy.ts` is the Next.js middleware (renamed from the usual `middleware.ts`) wrapping `clerkMiddleware()`. Protected-route config lives in the `matcher`.
 - **Tailwind v4**: `apps/web` and `apps/chrome` use Tailwind v4 with `@tailwindcss/postcss` — no `tailwind.config` content scanning in the old sense; use the v4 conventions.
 
