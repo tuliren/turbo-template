@@ -25,7 +25,7 @@
     "@repo/typescript-config": "*",
     "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
-    "eslint": "^9.39.5",
+    "eslint": "^10.14.0",
     "pagefind": "^1.6.0",
     "typescript": "^6.0.3"
   }
