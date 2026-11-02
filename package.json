@@ -26,7 +26,10 @@
     ]
   },
   "resolutions": {
-    "zod": "4.3.6"
+    "@xmldom/xmldom": "^0.9.12",
+    "deepmerge-ts": "^8.0.2",
+    "webpack-dev-middleware": "^7.4.6",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
